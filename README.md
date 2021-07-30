@@ -9,7 +9,6 @@
 - [ ] Unit tests
 - [ ] RabbitMQ
 - [ ] TypeScript
-- [ ] Comet Haley
 
 
 
