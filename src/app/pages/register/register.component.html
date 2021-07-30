@@ -1,0 +1,162 @@
+<div class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+  <div class="d-flex flex-column flex-root" style="height: 100%;">
+      <!--begin::Login-->
+      <div class="login login-3 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login" style="height: 100%;">
+        
+          <!--begin::Aside-->
+          <!--begin::Content-->
+          <div class="login-content flex-column-fluid d-flex flex-column p-10">
+              <!--begin::Wrapper-->
+              <div class="d-flex flex-row-fluid flex-center">
+                <div style="padding-top: 15px">
+                </div>
+                  <!--begin::Signin-->
+                  <div class="login-form login-form-signup">
+
+                      <!--begin::Form-->
+                      <form class="form" novalidate="novalidate" [formGroup]="registrationForm" (ngSubmit)="submit()">
+                          <!--begin: Wizard Step 1-->
+                          <div class="pt-15 pb-5" data-wizard-type="step-content" data-wizard-state="current">
+                              <!--begin::Title-->
+                              <div class="pb-10 pb-lg-15">
+                                  <h3 class="font-weight-bolder text-dark display5">Create an account</h3>
+                                  <div class="text-muted font-weight-bold font-size-h4"> do you have an account?
+                                      <a routerLink="/login"
+                                          class="text-primary font-weight-bolder">login</a>
+                                  </div>
+                              </div>  
+
+                              <!--begin::Title-->
+                              <!--begin::Form Group-->
+                              <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input
+                                  style="background-color: white; padding: 15px;"
+                                  type="text"
+                                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                                  name="fullname"
+                                  placeholder="Name"
+                                  autocomplete="off"
+                                  [class.is-invalid]="this.isControlInvalid('fullname')"
+                                  [class.is-valid]="this.isControlValid('fullname')"
+                                  formControlName="fullname"
+                                />
+                                <div class="valid-feedback" *ngIf="this.isControlValid('fullname')">
+                                  valid
+                                </div>
+                                <div class="invalid-feedback" *ngIf="!this.isControlValid('fullname')">
+                                  invalid
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('required', 'fullname')"
+                                >
+                                required
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('minlength', 'fullname')"
+                                >
+                                must contain at least three characters
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('maxlength', 'fullname')"
+                                >
+                                must contain no more than 20 characters
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input
+                                  style="background-color: white; padding: 15px;"
+                                  type="password"
+                                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                                  name="password"
+                                  placeholder="Password"
+                                  autocomplete="off"
+                                  [class.is-invalid]="this.isControlInvalid('password')"
+                                  [class.is-valid]="this.isControlValid('password')"
+                                  formControlName="password"
+                                />
+                                <div class="valid-feedback" *ngIf="this.isControlValid('password')">
+                                  valid
+                                </div>
+                                <div class="invalid-feedback" *ngIf="!this.isControlValid('password')">
+                                  invalid
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('required', 'password')"
+                                >
+                                required
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('minlength', 'password')"
+                                >
+                                must contain at least three characters
+                                </div>
+                                <div
+                                  class="invalid-feedback"
+                                  *ngIf="this.controlHasError('maxlength', 'password')"
+                                >
+                                must contain no more than 20 characters
+                                </div>
+                              </div>
+
+                          <!--end: Wizard Step 4-->
+
+                          <ng-template #formError let-control="control" let-message="message" let-validation="validation">
+                              <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+                                <div class="fv-plugins-message-container">
+                                  <div class="fv-help-block">
+                                    {{ message }}
+                                  </div>
+                                </div>
+                              </ng-container>
+                            </ng-template>
+
+                          <!--begin: Wizard Actions-->
+                          <div class="d-flex justify-content-between pt-3">
+                              <div class="mr-2">
+                                <button class="btn btn-primary font-weight-bolder font-size-h6 pl-5 pr-8 py-4 my-3"
+                                data-wizard-type="action-submit" type="submit"
+                                id="kt_login_signup_form_submit_button">Register
+                                <span class="svg-icon svg-icon-md ml-2">
+                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Right-2.svg-->
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)"
+                                                x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                            <path
+                                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
+                                                fill="#000000" fill-rule="nonzero"
+                                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                                        </g>
+                                    </svg>
+                                    <!--end::Svg Icon-->
+                                </span></button>
+                              </div>
+                              <div>
+                              </div>
+                          </div>
+                          <!--end: Wizard Actions-->
+                          </div>
+                      </form>
+                      <!--end::Form-->
+                  </div>
+                  <!--end::Signin-->
+              </div>
+              <!--end::Wrapper-->
+          </div>
+          <!--end::Content-->
+      </div>
+      <!--end::Login-->
+  </div>
+</div>  

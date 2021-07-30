@@ -1,5 +1,18 @@
 # Knawat-Back-End-Developer-Node.js
 
+
+- [x] Client (angular pages: login, register, products, cart)
+- [] Moleculer
+- [] Redis
+- [] API
+- [] Elasticsearch
+- [] Unit tests
+- [] RabbitMQ
+- [] TypeScript
+- [] Comet Haley
+
+
+
 > **WE ARE HIRING:** [Apply Now](https://www.knawat.com/career/).
 
 # Back-End Developer - Node.js
