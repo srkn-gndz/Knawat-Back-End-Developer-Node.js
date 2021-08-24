@@ -2,6 +2,6 @@ import { CartModel } from './cart.model';
 
 export class UserModel {
     id!: string;
-    name!: string;
+    fullname!: string;
     chart!: CartModel; 
 }

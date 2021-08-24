@@ -1,13 +1,13 @@
 version: '3.9'
 services:
-  angular:
-    hostname: localhost
-    container_name: angular
-    image: angular
-    restart: unless-stopped
-    build: .
-    ports:
-      - 80:80
+  # angular:
+  #   hostname: localhost
+  #   container_name: angular
+  #   image: angular
+  #   restart: unless-stopped
+  #   build: .
+  #   ports:s
+  #     - 80:80
   server:
     hostname: localhost
     container_name: server

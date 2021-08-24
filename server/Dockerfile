@@ -14,4 +14,6 @@ EXPOSE 8080
 
 WORKDIR /node/app/server
 
-CMD ["npm", "start"]
+RUN npm run build
+
+CMD npm run start

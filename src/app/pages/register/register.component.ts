@@ -76,6 +76,25 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
+    let user = {
+      fullname: this.f['fullname'].value,
+      password: this.f['password'].value
+    };
+    this.apiService
+    .api_v1_user(user)
+    .then(response => {
+      if (response.status === 'error') { 
+        this.apiService.open_info_snack_bar('an error an error occurred');
+      } else {
+        console.dir(response);
+        this.ref.detectChanges();
+        // this.apiService.router.navigate(['/']);
+        this.apiService.open_info_snack_bar('user successfully registered');
+      }
+    })
+    .catch(error => { 
+      this.apiService.open_info_snack_bar('an error an error occurred');
+    });
   }
 
 }
